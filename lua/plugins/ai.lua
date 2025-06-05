@@ -1,13 +1,4 @@
 return {
-  -- {
-  --   "zbirenbaum/copilot.lua",
-  --   opts = {
-  --     server = {
-  --       type = "binary",
-  --     },
-  --   },
-  -- },
-
   {
     "CopilotC-Nvim/CopilotChat.nvim",
     enabled = false,
@@ -22,6 +13,18 @@ return {
       "nvim-treesitter/nvim-treesitter",
       "ravitemer/mcphub.nvim",
     },
+    config = function(_, opts)
+      require("codecompanion").setup(opts)
+      local group = vim.api.nvim_create_augroup("CodeCompanionHooks", { clear = true })
+
+      vim.api.nvim_create_autocmd("User", {
+        pattern = "CodeCompanionChatOpened",
+        group = group,
+        callback = function(event)
+          vim.cmd("startinsert")
+        end,
+      })
+    end,
   },
 
   {
