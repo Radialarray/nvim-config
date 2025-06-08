@@ -1,17 +1,45 @@
 return {
-  "smoka7/multicursors.nvim",
-  event = "VeryLazy",
-  dependencies = {
-    "nvimtools/hydra.nvim",
+  {
+    "smoka7/multicursors.nvim",
+    event = "VeryLazy",
+    dependencies = {
+      "nvimtools/hydra.nvim",
+    },
+    opts = {},
+    cmd = { "MCstart", "MCvisual", "MCclear", "MCpattern", "MCvisualPattern", "MCunderCursor" },
+    keys = {
+      {
+        mode = { "v", "n" },
+        "<Leader>m",
+        "<cmd>MCstart<cr>",
+        desc = "Create a selection for selected text or word under the cursor",
+      },
+    },
   },
-  opts = {},
-  cmd = { "MCstart", "MCvisual", "MCclear", "MCpattern", "MCvisualPattern", "MCunderCursor" },
-  keys = {
-    {
-      mode = { "v", "n" },
-      "<Leader>m",
-      "<cmd>MCstart<cr>",
-      desc = "Create a selection for selected text or word under the cursor",
+  {
+    "folke/which-key.nvim",
+    opts_extend = { "spec" },
+    opts = {
+      spec = {
+        {
+          mode = { "n", "v" },
+          {
+            "<leader>m",
+            group = "multicursor",
+          },
+
+          {
+            "<leader>ma",
+            function()
+              vim.cmd("MCstart")
+              vim.defer_fn(function()
+                vim.api.nvim_input("<C-a>")
+              end, 50)
+            end,
+            desc = "Find all (MCstart + <C-a>)",
+          },
+        },
+      },
     },
   },
 }
