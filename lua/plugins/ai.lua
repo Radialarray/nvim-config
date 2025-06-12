@@ -60,6 +60,13 @@ return { -- {
     "zbirenbaum/copilot.lua",
     enabled = true,
     cmd = "Copilot",
+    config = function()
+      require("copilot").setup({
+        server = {
+          type = "binary",
+        },
+      })
+    end,
   },
   {
     "ravitemer/mcphub.nvim",
@@ -98,9 +105,21 @@ return { -- {
     },
     config = function(_, opts)
       require("codecompanion").setup({
+        strategies = {
+          chat = {
+            adapter = "copilot",
+          },
+          inline = {
+            adapter = "copilot",
+          },
+          cmd = {
+            adapter = "copilot",
+          },
+        },
         adapters = {
           opts = {
             show_model_choices = true,
+            show_defaults = false,
           },
         },
         extensions = {
@@ -264,7 +283,8 @@ return { -- {
         },
       },
     },
-  }, -- {
+  },
+  -- {
   --     "yetone/avante.nvim",
   --     event = "VeryLazy",
   --     version = false, -- Never set this value to "*"! Never!
