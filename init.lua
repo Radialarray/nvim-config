@@ -1,6 +1,8 @@
--- bootstrap lazy.nvim, LazyVim and your plugins
+-- Bootstrap lazy.nvim, LazyVim and plugins
+
+-- Neovide GUI-specific optimizations and settings
 if vim.g.neovide then
-  -- Put anything you want to happen only in Neovide here
+  -- Disable all animations for better performance
   vim.g.neovide_position_animation_length = 0
   vim.g.neovide_cursor_animation_length = 0.00
   vim.g.neovide_cursor_trail_size = 0
@@ -8,25 +10,39 @@ if vim.g.neovide then
   vim.g.neovide_cursor_animate_command_line = false
   vim.g.neovide_scroll_animation_far_lines = 0
   vim.g.neovide_scroll_animation_length = 0.00
+  
+  -- Cursor visual effects
   vim.g.neovide_cursor_vfx_mode = "ripple"
+  
+  -- Font configuration
   vim.o.guifont = "JetBrainsMonoNL Nerd Font"
-  vim.keymap.set({ "n", "x" }, "<C-S-C>", '"+y', { desc = "Copy system clipboard" })
-  vim.keymap.set({ "n", "x" }, "<C-S-V>", '"+p', { desc = "Paste system clipboard" })
+  
+  -- System clipboard integration
+  vim.keymap.set({ "n", "x" }, "<C-S-C>", '"+y', { desc = "Copy to system clipboard" })
+  vim.keymap.set({ "n", "x" }, "<C-S-V>", '"+p', { desc = "Paste from system clipboard" })
+  
+  -- Zoom controls for Neovide
   if vim.g.neovide == true then
     vim.api.nvim_set_keymap(
       "n",
       "<C-+>",
       ":lua vim.g.neovide_scale_factor = vim.g.neovide_scale_factor + 0.1<CR>",
-      { silent = true }
+      { silent = true, desc = "Zoom in" }
     )
     vim.api.nvim_set_keymap(
       "n",
       "<C-->",
       ":lua vim.g.neovide_scale_factor = vim.g.neovide_scale_factor - 0.1<CR>",
-      { silent = true }
+      { silent = true, desc = "Zoom out" }
     )
-    vim.api.nvim_set_keymap("n", "<C-0>", ":lua vim.g.neovide_scale_factor = 1<CR>", { silent = true })
+    vim.api.nvim_set_keymap(
+      "n", 
+      "<C-0>", 
+      ":lua vim.g.neovide_scale_factor = 1<CR>", 
+      { silent = true, desc = "Reset zoom" }
+    )
   end
 end
 
+-- Load LazyVim configuration
 require("config.lazy")

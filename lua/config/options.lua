@@ -2,5 +2,8 @@
 -- Default options that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/options.lua
 -- Add any additional options here
 
-vim.opt.relativenumber = true
-vim.g.snacks_animate = false
+-- Editor appearance and behavior
+vim.opt.relativenumber = true -- Show relative line numbers for easier navigation
+
+-- Performance optimizations
+vim.g.snacks_animate = false -- Disable snacks animations for better performance
