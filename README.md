@@ -19,6 +19,7 @@ A clean and well-documented [LazyVim](https://github.com/LazyVim/LazyVim) config
 ### ⚡ Productivity Tools
 - **Multi-cursor Support**: Edit multiple locations simultaneously
 - **Git Integration**: Enhanced git signs and status information
+- **GitHub Integration**: Complete pull request and issue management with Octo.nvim
 - **Image Clipboard**: Easy image pasting in markdown files
 - **Smart Completion**: AI-enhanced completion with blink.cmp
 
@@ -63,6 +64,29 @@ lua/
 | `<leader>m` | Create multicursor selection |
 | `<leader>ma` | Select all matches |
 
+### GitHub Integration (`g`)
+| Key | Description |
+|-----|-------------|
+| `gi` | List issues |
+| `gI` | Search issues |
+| `gp` | List pull requests |
+| `gP` | Search pull requests |
+| `gr` | List repositories |
+| `gS` | Search GitHub |
+| `gc` | Create pull request |
+| `gC` | Create issue |
+| `go` | Checkout pull request |
+| `gm` | Merge pull request |
+| `gd` | Show PR diff |
+| `gf` | Show PR changed files |
+| `gb` | Open PR in browser |
+| `gB` | Open issue in browser |
+| `gv*` | Review operations (start, resume, commit, discard) |
+| `gt*` | Task management (assignees, labels, reviewers) |
+| `gn*` | Comment operations (add, delete, navigate) |
+| `gR*` | Repository operations (fork, URL, browser) |
+| `gA*` | Bulk actions (open all files, show diffs) |
+
 ### Neovide-specific
 | Key | Description |
 |-----|-------------|
@@ -95,6 +119,17 @@ lua/
 4. **Setup GitHub Copilot**:
    ```vim
    :Copilot auth
+   ```
+
+5. **Setup GitHub Integration** (optional for Octo.nvim):
+   ```bash
+   # Create a GitHub personal access token with repo permissions
+   # at https://github.com/settings/tokens
+   export GITHUB_TOKEN=your_token_here
+   ```
+   Or configure via gh CLI:
+   ```bash
+   gh auth login
    ```
 
 ## ⚙️ Customization
@@ -143,6 +178,7 @@ The configuration is already optimized for performance:
 ### Editor Enhancements
 - **todo-comments.nvim**: Highlight and navigate TODO comments
 - **gitsigns.nvim**: Git status in signs column
+- **octo.nvim**: GitHub pull request and issue integration
 - **multicursors.nvim**: Multiple cursor editing
 - **img-clip.nvim**: Image clipboard integration
 
