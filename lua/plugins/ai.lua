@@ -56,6 +56,15 @@ return {
       "nvim-treesitter/nvim-treesitter",
       "ravitemer/codecompanion-history.nvim",
     },
+    keys = {
+      { "<leader>aa", "<cmd>CodeCompanionChat Toggle<cr>", desc = "Toggle Chat" },
+      { "<leader>ap", "<cmd>CodeCompanionActions<cr>", desc = "🤖Prompt Actions" },
+      { "<leader>aq", "<cmd>CodeCompanion<cr>", desc = "Quick Chat" },
+      { "<leader>ax", "<cmd>CodeCompanionChat fix<cr>", desc = "Fix Code" },
+      { "<leader>ae", "<cmd>CodeCompanionChat explain<cr>", desc = "Explain Code" },
+      { "<leader>ac", "<cmd>CodeCompanionChat commit<cr>", desc = "🤖Generate Commit" },
+      { "<leader>ah", "<cmd>CodeCompanionHistory<cr>", desc = "🤖Chat History" },
+    },
     config = function()
       require("codecompanion").setup({
         strategies = {
@@ -172,33 +181,6 @@ return {
         },
         per_filetype = {
           codecompanion = { "codecompanion" }, -- AI completion for codecompanion
-        },
-      },
-    },
-  },
-
-  -- AI-related keybindings and which-key integration
-  {
-    "folke/which-key.nvim",
-    event = "VeryLazy",
-    opts_extend = { "spec" },
-    opts = {
-      spec = {
-        {
-          mode = { "n", "v" },
-          {
-            "<leader>a",
-            group = "ai",
-            icon = { icon = "🤖 ", color = "green" },
-          },
-          -- AI Chat Commands
-          { "<leader>aa", "<cmd>CodeCompanionChat Toggle<cr>", desc = "Toggle Chat" },
-          { "<leader>ap", "<cmd>CodeCompanionActions<cr>", desc = "Prompt Actions" },
-          { "<leader>aq", "<cmd>CodeCompanion<cr>", desc = "Quick Chat" },
-          { "<leader>ax", "<cmd>CodeCompanionChat fix<cr>", desc = "Fix Code" },
-          { "<leader>ae", "<cmd>CodeCompanionChat explain<cr>", desc = "Explain Code" },
-          { "<leader>ac", "<cmd>CodeCompanionChat commit<cr>", desc = "Generate Commit" },
-          { "<leader>ah", "<cmd>CodeCompanionHistory<cr>", desc = "Chat History" },
         },
       },
     },
