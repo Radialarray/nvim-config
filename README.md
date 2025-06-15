@@ -67,25 +67,12 @@ lua/
 ### GitHub Integration (`g`)
 | Key | Description |
 |-----|-------------|
-| `gi` | List issues |
-| `gI` | Search issues |
-| `gp` | List pull requests |
-| `gP` | Search pull requests |
-| `gr` | List repositories |
-| `gS` | Search GitHub |
 | `gc` | Create pull request |
 | `gC` | Create issue |
 | `go` | Checkout pull request |
-| `gm` | Merge pull request |
+| `gl` | List PR commits |
 | `gd` | Show PR diff |
-| `gf` | Show PR changed files |
-| `gb` | Open PR in browser |
-| `gB` | Open issue in browser |
-| `gv*` | Review operations (start, resume, commit, discard) |
-| `gt*` | Task management (assignees, labels, reviewers) |
-| `gn*` | Comment operations (add, delete, navigate) |
-| `gR*` | Repository operations (fork, URL, browser) |
-| `gA*` | Bulk actions (open all files, show diffs) |
+| `gf` | Show PR changes |
 
 ### Neovide-specific
 | Key | Description |
