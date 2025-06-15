@@ -19,6 +19,7 @@ A clean and well-documented [LazyVim](https://github.com/LazyVim/LazyVim) config
 ### ⚡ Productivity Tools
 - **Multi-cursor Support**: Edit multiple locations simultaneously
 - **Git Integration**: Enhanced git signs and status information
+- **GitHub Integration**: Pull request and issue management with Octo plugin
 - **Image Clipboard**: Easy image pasting in markdown files
 - **Smart Completion**: AI-enhanced completion with blink.cmp
 
@@ -40,6 +41,7 @@ lua/
 │   ├── ai.lua            # AI tools and integrations
 │   ├── colorscheme.lua   # Theme and colorscheme settings
 │   ├── editor.lua        # Editor enhancement plugins
+│   ├── git.lua           # Git and GitHub integration
 │   └── multicursors.lua  # Multiple cursor functionality
 └── init.lua              # Main entry point with Neovide setup
 ```
@@ -63,6 +65,36 @@ lua/
 | `<leader>m` | Create multicursor selection |
 | `<leader>ma` | Select all matches |
 
+### Git/GitHub (`<leader>g`)
+| Key | Description |
+|-----|-------------|
+| **Pull Requests** |
+| `<leader>gpl` | List PRs |
+| `<leader>gpc` | Create PR |
+| `<leader>gpo` | Checkout PR |
+| `<leader>gpd` | Show PR diff |
+| `<leader>gpm` | Merge PR (commit) |
+| `<leader>gps` | Squash & merge PR |
+| `<leader>gpf` | Show changed files |
+| `<leader>gpv` | Open PR in browser |
+| **Issues** |
+| `<leader>gil` | List issues |
+| `<leader>gic` | Create issue |
+| `<leader>gie` | Edit issue |
+| `<leader>gix` | Close issue |
+| `<leader>giv` | Open issue in browser |
+| **Review** |
+| `<leader>grs` | Start review |
+| `<leader>gra` | Approve review |
+| `<leader>grr` | Request changes |
+| `<leader>grb` | Submit review |
+| **Git Operations** |
+| `<leader>gb` | Git blame |
+| `<leader>gd` | Diff this file |
+| `<leader>gh` | Preview hunk |
+| `<leader>gs` | Stage hunk |
+| `<leader>gl` | Toggle line blame |
+
 ### Neovide-specific
 | Key | Description |
 |-----|-------------|
@@ -77,6 +109,7 @@ lua/
 1. **Prerequisites**:
    - Neovim 0.8+ 
    - Git
+   - GitHub CLI (`gh`) - required for Octo plugin
    - A Nerd Font (JetBrainsMonoNL recommended for Neovide)
    - GitHub Copilot subscription (for AI features)
 
@@ -95,6 +128,16 @@ lua/
 4. **Setup GitHub Copilot**:
    ```vim
    :Copilot auth
+   ```
+
+5. **Setup GitHub CLI** (for GitHub integration):
+   ```bash
+   # Install GitHub CLI (if not already installed)
+   # On Ubuntu/Debian:
+   sudo apt install gh
+   
+   # Authenticate with GitHub
+   gh auth login
    ```
 
 ## ⚙️ Customization
@@ -143,6 +186,7 @@ The configuration is already optimized for performance:
 ### Editor Enhancements
 - **todo-comments.nvim**: Highlight and navigate TODO comments
 - **gitsigns.nvim**: Git status in signs column
+- **octo.nvim**: GitHub integration for PRs and issues
 - **multicursors.nvim**: Multiple cursor editing
 - **img-clip.nvim**: Image clipboard integration
 
