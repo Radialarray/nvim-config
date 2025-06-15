@@ -7,7 +7,6 @@ return {
   },
 
   -- GitHub Copilot integration
-  -- GitHub Copilot integration
   {
     "zbirenbaum/copilot.lua",
     cmd = "Copilot",
@@ -20,7 +19,6 @@ return {
     end,
   },
 
-  -- Model Context Protocol Hub for external tool integration
   -- Model Context Protocol Hub for external tool integration
   {
     "ravitemer/mcphub.nvim",
@@ -49,7 +47,6 @@ return {
     end,
   },
 
-  -- AI-powered coding assistant and chat interface
   -- AI-powered coding assistant and chat interface
   {
     "olimorris/codecompanion.nvim",
@@ -121,7 +118,6 @@ return {
   },
 
   -- Enhanced markdown rendering for AI chats
-  -- Enhanced markdown rendering for AI chats
   {
     "MeanderingProgrammer/render-markdown.nvim",
     ft = { "markdown", "codecompanion" },
@@ -137,7 +133,6 @@ return {
   },
 
   -- Minimal diff visualization (disabled by default)
-  -- Minimal diff visualization (disabled by default)
   {
     "echasnovski/mini.diff",
     config = function()
@@ -148,7 +143,6 @@ return {
     end,
   },
 
-  -- Image clipboard integration for markdown files
   -- Image clipboard integration for markdown files
   {
     "HakonHarnes/img-clip.nvim",
@@ -163,7 +157,6 @@ return {
     },
   },
 
-  -- Enhanced completion with AI integration
   -- Enhanced completion with AI integration
   {
     "saghen/blink.cmp",
@@ -184,7 +177,6 @@ return {
     },
   },
 
-  -- AI-related keybindings and which-key integration
   -- AI-related keybindings and which-key integration
   {
     "folke/which-key.nvim",
