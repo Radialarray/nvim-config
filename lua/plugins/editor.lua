@@ -18,26 +18,21 @@ return {
       },
     },
   },
-
+  -- Octo.nvim - GitHub integration for pull requests and issues
+  {
+    "pwntester/octo.nvim",
+    keys = {
+      { "<leader>gc", "<cmd>Octo pr create<cr>", desc = "Create PR" },
+      { "<leader>gC", "<cmd>Octo issue create<cr>", desc = "Create Issue" },
+      { "<leader>gO", "<cmd>Octo pr checkout<cr>", desc = "Checkout PR" },
+      { "<leader>gD", "<cmd>Octo pr diff<cr>", desc = "Show PR Diff" },
+      { "<leader>gF", "<cmd>Octo pr changes<cr>", desc = "Show PR Changes" },
+    },
+  },
   -- Git integration with signs and blame
   {
     "lewis6991/gitsigns.nvim",
-    opts = {
-      signs = {
-        add = { text = "▎" },
-        change = { text = "▎" },
-        delete = { text = "" },
-        topdelete = { text = "" },
-        changedelete = { text = "▎" },
-        untracked = { text = "▎" },
-      },
-      current_line_blame = false, -- Toggle with `:Gitsigns toggle_current_line_blame`
-      current_line_blame_opts = {
-        virt_text = true,
-        virt_text_pos = "eol", -- 'eol' | 'overlay' | 'right_align'
-        delay = 1000,
-        ignore_whitespace = false,
-      },
-    },
+    event = "LazyFile",
+    enabled = true,
   },
 }
