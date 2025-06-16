@@ -180,7 +180,7 @@ Feel free to submit issues and pull requests to improve this configuration.
 
 ## 📄 License
 
-This configuration is licensed under the Apache 2.0 License. See [LICENSE](LICENSE) for details.
+This configuration is licensed under the MIT License. See [LICENSE](LICENSE) for details.
 
 ---
 
