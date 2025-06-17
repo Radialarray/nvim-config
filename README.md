@@ -174,9 +174,13 @@ The configuration is already optimized for performance:
 - **vim-colors-xcode**: Xcode-inspired themes  
 - **material.nvim**: Material Design themes
 
+## 🗺️ Future Roadmap
+
+See our [ROADMAP.md](ROADMAP.md) for planned features and development priorities.
+
 ## 🤝 Contributing
 
-Feel free to submit issues and pull requests to improve this configuration.
+Feel free to submit issues and pull requests to improve this configuration. Check our [roadmap](ROADMAP.md) for upcoming features you can help implement.
 
 ## 📄 License
 
