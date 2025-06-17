@@ -8,12 +8,12 @@ return {
       signs = true, -- show icons in the signs column
       sign_priority = 8, -- sign priority
       keywords = {
-        FIX = { icon = " ", color = "error", alt = { "FIXME", "BUG", "FIXIT", "ISSUE" } },
-        TODO = { icon = " ", color = "info" },
-        HACK = { icon = " ", color = "warning" },
-        WARN = { icon = " ", color = "warning", alt = { "WARNING", "XXX" } },
-        PERF = { icon = " ", alt = { "OPTIM", "PERFORMANCE", "OPTIMIZE" } },
-        NOTE = { icon = " ", color = "hint", alt = { "INFO" } },
+        FIX = { icon = "🔧 ", color = "error", alt = { "FIXME", "BUG", "FIXIT", "ISSUE" } },
+        TODO = { icon = "📝 ", color = "info" },
+        HACK = { icon = "⚡ ", color = "warning" },
+        WARN = { icon = "⚠️ ", color = "warning", alt = { "WARNING", "XXX" } },
+        PERF = { icon = "🚀 ", alt = { "OPTIM", "PERFORMANCE", "OPTIMIZE" } },
+        NOTE = { icon = "💡 ", color = "hint", alt = { "INFO" } },
         TEST = { icon = "⏲ ", color = "test", alt = { "TESTING", "PASSED", "FAILED" } },
       },
     },
