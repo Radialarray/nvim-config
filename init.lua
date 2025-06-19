@@ -10,17 +10,16 @@ if vim.g.neovide then
   vim.g.neovide_cursor_animate_command_line = false
   vim.g.neovide_scroll_animation_far_lines = 0
   vim.g.neovide_scroll_animation_length = 0.00
-  
+
   -- Cursor visual effects
   vim.g.neovide_cursor_vfx_mode = "ripple"
-  
+
   -- Font configuration
   vim.o.guifont = "JetBrainsMonoNL Nerd Font"
-  
   -- System clipboard integration
   vim.keymap.set({ "n", "x" }, "<C-S-C>", '"+y', { desc = "Copy to system clipboard" })
   vim.keymap.set({ "n", "x" }, "<C-S-V>", '"+p', { desc = "Paste from system clipboard" })
-  
+
   -- Zoom controls for Neovide
   if vim.g.neovide == true then
     vim.api.nvim_set_keymap(
@@ -36,9 +35,9 @@ if vim.g.neovide then
       { silent = true, desc = "Zoom out" }
     )
     vim.api.nvim_set_keymap(
-      "n", 
-      "<C-0>", 
-      ":lua vim.g.neovide_scale_factor = 1<CR>", 
+      "n",
+      "<C-0>",
+      ":lua vim.g.neovide_scale_factor = 1<CR>",
       { silent = true, desc = "Reset zoom" }
     )
   end
