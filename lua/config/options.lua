@@ -8,8 +8,5 @@ vim.opt.relativenumber = true -- Show relative line numbers for easier navigatio
 -- Performance optimizations
 vim.g.snacks_animate = false -- Disable snacks animations for better performance
 
-vim.keymap.set({ "n", "v" }, "<C-S-A>", "<cmd>CodeCompanionActions<cr>", { noremap = true, silent = true })
-vim.keymap.set("v", "ga", "<cmd>CodeCompanionChat Add<cr>", { noremap = true, silent = true })
-
 -- Expand 'cc' into 'CodeCompanion' in the command line
 vim.cmd([[cab cc CodeCompanion]])
