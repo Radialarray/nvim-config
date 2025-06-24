@@ -4,6 +4,10 @@
 
 vim.keymap.set({ "n", "i", "v" }, "ö", "[", { remap = true })
 vim.keymap.set({ "n", "i", "v" }, "ä", "]", { remap = true })
+
+vim.keymap.set({ "n", "i", "v" }, "Ö", "{", { remap = true })
+vim.keymap.set({ "n", "i", "v" }, "Ä", "}", { remap = true })
+
 vim.keymap.set("i", "jk", "<Esc>", { noremap = true })
 
 vim.keymap.set({ "n", "v" }, "<C-S-A>", "<cmd>CodeCompanionActions<cr>", { noremap = true, silent = true })
