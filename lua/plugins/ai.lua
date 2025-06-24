@@ -68,7 +68,43 @@ return {
     config = function()
       require("codecompanion").setup({
         strategies = {
-          chat = { adapter = "copilot" },
+          chat = {
+            adapter = "copilot",
+            keymaps = {
+              next_chat = {
+                modes = {
+                  n = "Ä",
+                },
+                index = 11,
+                callback = "keymaps.next_chat",
+                description = "Next Chat",
+              },
+              previous_chat = {
+                modes = {
+                  n = "Ö",
+                },
+                index = 12,
+                callback = "keymaps.previous_chat",
+                description = "Previous Chat",
+              },
+              next_header = {
+                modes = {
+                  n = "ä",
+                },
+                index = 13,
+                callback = "keymaps.next_header",
+                description = "Next Header",
+              },
+              previous_header = {
+                modes = {
+                  n = "ö",
+                },
+                index = 14,
+                callback = "keymaps.previous_header",
+                description = "Previous Header",
+              },
+            },
+          },
           inline = { adapter = "copilot" },
           cmd = { adapter = "copilot" },
         },
@@ -112,17 +148,17 @@ return {
       })
 
       -- Auto-focus chat window and enter insert mode when opened
-      local group = vim.api.nvim_create_augroup("CodeCompanionHooks", { clear = true })
-      vim.api.nvim_create_autocmd("User", {
-        pattern = "CodeCompanionChatOpened",
-        group = group,
-        callback = function(event)
-          local buf = event.buf
-          vim.api.nvim_set_current_buf(buf)
-          vim.api.nvim_win_set_cursor(0, { vim.api.nvim_buf_line_count(buf), 0 })
-          vim.cmd("startinsert")
-        end,
-      })
+      -- local group = vim.api.nvim_create_augroup("CodeCompanionHooks", { clear = true })
+      -- vim.api.nvim_create_autocmd("User", {
+      --   pattern = "CodeCompanionChatOpened",
+      --   group = group,
+      --   callback = function(event)
+      --     local buf = event.buf
+      --     vim.api.nvim_set_current_buf(buf)
+      --     vim.api.nvim_win_set_cursor(0, { vim.api.nvim_buf_line_count(buf), 0 })
+      --     vim.cmd("startinsert")
+      --   end,
+      -- })
     end,
   },
 
