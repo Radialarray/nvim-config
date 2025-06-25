@@ -57,11 +57,12 @@ return {
       "ravitemer/codecompanion-history.nvim",
     },
     keys = {
-      { "<leader>aa", "<cmd>CodeCompanionChat Toggle<cr>", desc = "Toggle Chat" },
+      { "<leader>a", name = "🤖AI/Code Assistant", mode = { "n" } },
+      { "<leader>aa", "<cmd>CodeCompanionChat Toggle<cr>", desc = "🤖Toggle Chat" },
       { "<leader>ap", "<cmd>CodeCompanionActions<cr>", desc = "🤖Prompt Actions" },
-      { "<leader>aq", "<cmd>CodeCompanion<cr>", desc = "Quick Chat" },
-      { "<leader>ax", "<cmd>CodeCompanionChat fix<cr>", desc = "Fix Code" },
-      { "<leader>ae", "<cmd>CodeCompanionChat explain<cr>", desc = "Explain Code" },
+      { "<leader>aq", "<cmd>CodeCompanion<cr>", desc = "🤖Quick Chat" },
+      { "<leader>ax", "<cmd>CodeCompanionChat fix<cr>", desc = "🤖Fix Code" },
+      { "<leader>ae", "<cmd>CodeCompanionChat explain<cr>", desc = "🤖Explain Code" },
       { "<leader>ac", "<cmd>CodeCompanionChat commit<cr>", desc = "🤖Generate Commit" },
       { "<leader>ah", "<cmd>CodeCompanionHistory<cr>", desc = "🤖Chat History" },
     },
@@ -162,6 +163,53 @@ return {
     end,
   },
 
+  {
+    "folke/which-key.nvim",
+    opts_extend = { "spec" },
+    opts = {
+      spec = {
+        {
+          mode = { "n", "v" },
+          { "<leader>a", group = "AI/Code Assistant", icon = { icon = "🤖", color = "magenta" } },
+          {
+            "<leader>aa",
+            "<cmd>CodeCompanionChat Toggle<cr>",
+            desc = "🤖Toggle Chat",
+          },
+          {
+            "<leader>ap",
+            "<cmd>CodeCompanionActions<cr>",
+            desc = "🤖Prompt Actions",
+          },
+          {
+            "<leader>aq",
+            "<cmd>CodeCompanion<cr>",
+            desc = "🤖Quick Chat",
+          },
+          {
+            "<leader>ax",
+            "<cmd>CodeCompanionChat fix<cr>",
+            desc = "🤖Fix Code",
+          },
+          {
+            "<leader>ae",
+            "<cmd>CodeCompanionChat explain<cr>",
+            desc = "🤖Explain Code",
+          },
+          {
+            "<leader>ac",
+            "<cmd>CodeCompanionChat commit<cr>",
+            desc = "🤖Generate Commit",
+          },
+          {
+            "<leader>ah",
+            "<cmd>CodeCompanionHistory<cr>",
+            desc = "🤖Chat History",
+          },
+        },
+      },
+    },
+  },
   -- Enhanced markdown rendering for AI chats
   {
     "MeanderingProgrammer/render-markdown.nvim",
