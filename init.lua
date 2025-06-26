@@ -19,7 +19,7 @@ if vim.g.neovide then
   -- System clipboard integration
   vim.keymap.set({ "n", "x" }, "<C-S-C>", '"+y', { desc = "Copy to system clipboard" })
   vim.keymap.set({ "n", "x" }, "<C-S-V>", '"+p', { desc = "Paste from system clipboard" })
-
+  vim.keymap.set("i", "<C-S-V>", "<C-R>+", { desc = "Paste from system clipboard in insert mode" })
   -- Zoom controls for Neovide
   if vim.g.neovide == true then
     vim.api.nvim_set_keymap(
