@@ -76,4 +76,15 @@ return {
       })
     end,
   },
+  {
+    "mfussenegger/nvim-lint",
+    optional = true,
+    opts = {
+      linters = {
+        ["markdownlint-cli2"] = {
+          args = { "--config", "~/.markdownlint-cli2.yaml", "--" },
+        },
+      },
+    },
+  },
 }
