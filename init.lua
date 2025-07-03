@@ -11,8 +11,11 @@ if vim.g.neovide then
   vim.g.neovide_scroll_animation_far_lines = 0
   vim.g.neovide_scroll_animation_length = 0.00
 
+  -- Interprets Alt + whatever actually as <M-whatever>, instead of sending the actual special character to Neovim.
+  vim.g.neovide_input_macos_option_key_is_meta = "only_left"
+
   -- Cursor visual effects
-  vim.g.neovide_cursor_vfx_mode = "ripple"
+  -- vim.g.neovide_cursor_vfx_mode = "ripple"
 
   -- Font configuration
   vim.o.guifont = "JetBrainsMonoNL Nerd Font"
