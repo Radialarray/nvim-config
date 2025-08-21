@@ -1,4 +1,5 @@
--- Editenhancement plugins
+-- Editor enhancement plugins
+-- Provides additional functionality for code editing, project management, and developer workflow
 return {
   -- Enhanced todo comments with highlighting and navigation
   {
@@ -140,10 +141,5 @@ return {
         require("telescope").load_extension("projects")
       end)
     end,
-  }, -- {
-  --   "tiagovla/scope.nvim",
-  --   config = function(_)
-  --     require("scope").setup({})
-  --   end,
-  -- },
+  },
 }

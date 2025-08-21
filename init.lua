@@ -1,4 +1,5 @@
--- Bootstrap lazy.nvim, LazyVim and plugins
+-- LazyVim Configuration Entry Point
+-- Optimizes Neovide GUI settings and loads LazyVim configuration
 
 -- Neovide GUI-specific optimizations and settings
 if vim.g.neovide then

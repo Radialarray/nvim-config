@@ -1,4 +1,5 @@
 -- AI and coding assistance plugins
+-- Comprehensive AI toolkit for enhanced development workflow with GitHub Copilot integration
 return {
   -- Disable CopilotChat in favor of CodeCompanion
   {
