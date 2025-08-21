@@ -18,7 +18,9 @@ if vim.g.neovide then
   -- vim.g.neovide_cursor_vfx_mode = "ripple"
 
   -- Font configuration
-  vim.o.guifont = "JetBrainsMonoNL Nerd Font"
+  vim.o.guifont = "JetbrainsMonoNL Nerd Font"
+  vim.g.neovide_text_gamma = 0.9
+  vim.g.neovide_text_contrast = 0.1
   -- System clipboard integration
   vim.keymap.set({ "n", "x" }, "<C-S-C>", '"+y', { desc = "Copy to system clipboard" })
   vim.keymap.set({ "n", "x" }, "<C-S-V>", '"+p', { desc = "Paste from system clipboard" })

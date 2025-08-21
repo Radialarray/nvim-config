@@ -249,21 +249,4 @@ return {
       },
     },
   },
-
-  -- Enhanced completion with AI integration
-  {
-    "saghen/blink.cmp",
-    opts = function(_, opts)
-      opts.sources = opts.sources or {}
-      opts.sources.providers = opts.sources.providers or {}
-      opts.sources.providers.lazydev = {
-        name = "LazyDev",
-        module = "lazydev.integrations.blink",
-        score_offset = 100,
-      }
-      opts.sources.per_filetype = opts.sources.per_filetype or {}
-      opts.sources.per_filetype.codecompanion = { "codecompanion" }
-      return opts
-    end,
-  },
 }
