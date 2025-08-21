@@ -109,29 +109,8 @@ return {
               enable_logging = false, -- Enable detailed logging for history extension
             },
           },
-          mcphub = {
-            callback = "mcphub.extensions.codecompanion",
-            opts = {
-              show_result_in_chat = true, -- Show mcp tool results in chat
-              make_vars = true, -- Convert resources to #variables
-              make_slash_commands = true, -- Add prompts as /slash commands
-            },
-          },
         },
       })
-
-      -- Auto-focus chat window and enter insert mode when opened
-      -- local group = vim.api.nvim_create_augroup("CodeCompanionHooks", { clear = true })
-      -- vim.api.nvim_create_autocmd("User", {
-      --   pattern = "CodeCompanionChatOpened",
-      --   group = group,
-      --   callback = function(event)
-      --     local buf = event.buf
-      --     vim.api.nvim_set_current_buf(buf)
-      --     vim.api.nvim_win_set_cursor(0, { vim.api.nvim_buf_line_count(buf), 0 })
-      --     vim.cmd("startinsert")
-      --   end,
-      -- })
     end,
   },
 
