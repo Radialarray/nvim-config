@@ -1,4 +1,8 @@
+-- Enhanced autocompletion configuration for LazyVim
+-- Provides multiple completion engine options with fallback alternatives
 return {
+  -- FALLBACK OPTION: nvim-cmp (traditional completion engine)
+  -- Uncomment this block and comment out blink.cmp to use nvim-cmp instead
   -- {
   --   "hrsh7th/nvim-cmp",
   --   ---@param opts cmp.ConfigSchema
@@ -41,7 +45,7 @@ return {
   --   end,
   -- },
 
-  -- Enhanced completion with AI integration
+  -- PRIMARY: Enhanced completion with AI integration
   {
     "saghen/blink.cmp",
     opts = function(_, opts)

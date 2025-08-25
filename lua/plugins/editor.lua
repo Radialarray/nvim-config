@@ -140,7 +140,11 @@ return {
         require("telescope").load_extension("projects")
       end)
     end,
-  }, -- {
+  },
+
+  -- FALLBACK OPTION: Scope.nvim (buffer scoping)
+  -- Uncomment this block to use scope.nvim for buffer isolation per tab
+  -- {
   --   "tiagovla/scope.nvim",
   --   config = function(_)
   --     require("scope").setup({})
