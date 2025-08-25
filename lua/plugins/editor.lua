@@ -160,5 +160,13 @@ return {
         require("telescope").load_extension("projects")
       end)
     end,
-  },
+  }, 
+  
+  -- Fallback buffer scoping plugin - kept as backup option
+  -- {
+  --   "tiagovla/scope.nvim",
+  --   config = function(_)
+  --     require("scope").setup({})
+  --   end,
+  -- },
 }
