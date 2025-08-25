@@ -1,3 +1,7 @@
+-- Lazy.nvim bootstrap and LazyVim configuration
+-- Automatically installs lazy.nvim if not present and sets up plugin management
+
+-- Bootstrap lazy.nvim plugin manager
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
   local lazyrepo = "https://github.com/folke/lazy.nvim.git"
@@ -14,6 +18,7 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
+-- Configure lazy.nvim with LazyVim
 require("lazy").setup({
   spec = {
     -- add LazyVim and import its plugins

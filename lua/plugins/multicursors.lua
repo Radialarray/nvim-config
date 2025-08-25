@@ -1,4 +1,5 @@
 -- Multiple cursor functionality
+-- Enhanced multiple cursor editing with hydra-based keybindings
 return {
   -- Main multicursor plugin
   {
