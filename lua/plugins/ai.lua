@@ -1,5 +1,10 @@
 -- AI and coding assistance plugins
+-- Comprehensive AI toolkit for enhanced development workflow with GitHub Copilot integration
 return {
+  -- ================================
+  -- Core AI Services
+  -- ================================
+
   -- Disable CopilotChat in favor of CodeCompanion
   {
     "CopilotC-Nvim/CopilotChat.nvim",
@@ -50,7 +55,6 @@ return {
   -- AI-powered coding assistant and chat interface
   {
     "olimorris/codecompanion.nvim",
-    lazy = false,
     dependencies = {
       "nvim-lua/plenary.nvim",
       "nvim-treesitter/nvim-treesitter",
@@ -210,6 +214,11 @@ return {
       },
     },
   },
+
+  -- ================================
+  -- UI Enhancements and Utilities
+  -- ================================
+
   -- Enhanced markdown rendering for AI chats
   {
     "MeanderingProgrammer/render-markdown.nvim",
@@ -228,6 +237,7 @@ return {
   -- Minimal diff visualization (disabled by default)
   {
     "echasnovski/mini.diff",
+    event = "VeryLazy",
     config = function()
       local diff = require("mini.diff")
       diff.setup({
@@ -239,6 +249,7 @@ return {
   -- Image clipboard integration for markdown files
   {
     "HakonHarnes/img-clip.nvim",
+    ft = { "markdown", "codecompanion" },
     opts = {
       filetypes = {
         codecompanion = {

@@ -1,4 +1,5 @@
--- Colorscheme configuration
+-- Colorscheme and theme configuration
+-- Provides multiple theme options with GitHub dark theme as default
 return {
   -- Additional colorscheme options
   { "projekt0n/github-nvim-theme", name = "github-theme" },

@@ -1,5 +1,10 @@
--- Editenhancement plugins
+-- Editor enhancement plugins
+-- Provides additional functionality for code editing, project management, and developer workflow
 return {
+  -- ================================
+  -- Code Annotation and Navigation
+  -- ================================
+
   -- Enhanced todo comments with highlighting and navigation
   {
     "folke/todo-comments.nvim",
@@ -18,6 +23,11 @@ return {
       },
     },
   },
+
+  -- ================================
+  -- Git and GitHub Integration
+  -- ================================
+
   -- Octo.nvim - GitHub integration for pull requests and issues
   {
     "pwntester/octo.nvim",
@@ -108,6 +118,11 @@ return {
       require("diffview").setup({})
     end,
   },
+
+  -- ================================
+  -- Linting and Code Quality
+  -- ================================
+
   {
     "mfussenegger/nvim-lint",
     optional = true,
@@ -119,6 +134,11 @@ return {
       },
     },
   },
+
+  -- ================================
+  -- Project Management
+  -- ================================
+
   {
     "ahmedkhalf/project.nvim",
     opts = {
@@ -140,7 +160,10 @@ return {
         require("telescope").load_extension("projects")
       end)
     end,
-  }, -- {
+  }, 
+  
+  -- Fallback buffer scoping plugin - kept as backup option
+  -- {
   --   "tiagovla/scope.nvim",
   --   config = function(_)
   --     require("scope").setup({})
